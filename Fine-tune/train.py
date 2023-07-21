@@ -40,8 +40,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--local_rank', type=int, default=-1, metavar='N',
                     help='Local rank for distributed training')
 parser.add_argument('--model_name_or_path', default="baichuan-inc/Baichuan-13B-Chat")  # "baichuan-inc/Baichuan-13B-Chat"
-parser.add_argument('--data_path', default='Fine-tune/HealthCareMagic100k.json') # HealthCareMagic100k.json
-parser.add_argument('--output_dir', default='Fine-tune')
+parser.add_argument('--data_path', default='HealthCareMagic100k.json') # HealthCareMagic100k.json
+parser.add_argument('--output_dir', default='Fine-tune/output')
 parser.add_argument('--num_train_epochs', default=1)
 parser.add_argument('--per_device_train_batch_size', default=4)
 parser.add_argument('--per_device_eval_batch_size', default=4)
