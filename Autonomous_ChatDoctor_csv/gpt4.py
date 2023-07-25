@@ -4,10 +4,10 @@ import numpy as np
 
 
 ### gpt4 account
-openai.api_key = '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'
+openai.api_key = ''
 
 ### my account
-# openai.api_key = "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"
+# openai.api_key = ""
 
 response = openai.ChatCompletion.create(
       model="gpt-4-0314",
