@@ -1,0 +1,1 @@
+python merge.py    --base_model FlagAlpha/Llama2-Chinese-7b-Chat     --lora_model ../model_llama/output_path_match_inst/checkpoint-40    --output_type huggingface     --output_dir ../model_llama/output_match_inst_lora40
