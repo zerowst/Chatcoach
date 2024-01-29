@@ -6,6 +6,8 @@ import pandas
 import interface.Embedding.dialogue_embed as embed
 from interface.inference import Agent
 
+openai.api_key = "YOUR OPENAI KEY"
+
 
 def main():
 

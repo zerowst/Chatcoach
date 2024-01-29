@@ -5,7 +5,6 @@ import json
 import pandas
 import interface.Embedding.dialogue_embed as embed
 
-OPENAIKEY = 'Your key'
 
 #-----------------------------------------------------------------------------------------------------#
 # 1. Medical knowledge extraction -> disease base loading -> find in the name list at first -> calculate embedding distance
@@ -20,7 +19,7 @@ OPENAIKEY = 'Your key'
 
 
 # 163 con_agent
-openai.api_key = OPENAIKEY
+
 
 coach_head_prompt = """Your role is to act as a linguistic coach for a doctor, ensuring their medical advice aligns with the provided context. If discrepancies are identified in the doctor's dialogue compared to the provided medical context, guide them towards making more accurate statements.
 You need to perform the following actions with the specific order:

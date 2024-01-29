@@ -8,8 +8,6 @@ import time
 import pandas as pd
 
 
-openai.api_key = "YOUR OPENAI KEY"
-
 ### loading all dialogues
 
 
