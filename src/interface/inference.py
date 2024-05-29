@@ -53,7 +53,7 @@ patient_head_prompt = """Based on the <patient profile> and <dialogue history> p
 
 # print(coach_prompt)
 
-### Agent would generate response from coach or patient based on provided medical context and patient profile
+### Agent would filtering response from coach or patient based on provided medical context and patient profile
 class Agent:
     def __init__(self, model):
         self.model = 'gpt-4' if model == 4 else 'gpt-3.5-turbo'
