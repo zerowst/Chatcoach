@@ -1,39 +1,25 @@
-# **Towards Communicative Medical Coaching via Latent Chain-of-thought**
-Code for paper "Towards Communicative Medical Coaching via Latent Chain-of-thought"
+# ChatCoach Dataset
 
-## About the paper
+## Dataset for "Benchmarking Large Language Models on Communicative Medical Coaching: A Dataset and a Novel System"
 
-## Generated ChatCoach dataset
-### Human annotated dataset
-Human anotated dataset consists of 291 conversations containing 1315 doctor statements with corresponding patient response and generated coaching sentences.
+### Introduction
 
-The human annotated dataset is now avaiable: [Download annotated dataset](https://github.com/zerowst/Chatcoach/blob/main/Testing/dataset/testing.json)
+The ChatCoach dataset encompasses 3,500 dialogues derived from real-world medical consultations found within the MedDialog dataset. This dataset is organized into three subsets for different phases of model development: training, validation, and testing. Specifically, it includes 2,509 conversations for training, 700 for validation, and 291 for testing. The testing set is extensively annotated and acts as a benchmark for evaluating the effectiveness of Large Language Models (LLMs) in medical coaching scenarios.
 
-### The whole set 
-The training set consists of 2509 conversations, and the validation set consists of 700 conversations.
+### Data Structure and Access
 
-The training set is available in Training/coach_train.csv
+- **Training Set:** 
+    - **Location:** `Training/coach_train.csv`
+    - **Description:** Contains the main body of conversations intended for fine-tuning LLMs.
+    - **Additional Resource:** `Training/finetuning.csv` for post-processed instruction-tuning data specifically tailored for Llama2.
 
-The validation set is available in Validation/coach_valid.csv
+- **Validation Set:** 
+    - **Location:** `Validation/coach_valid.csv`
+    - **Purpose:** Provides conversations used to avoid overfitting to the training data.
 
-The original finetuning data is available in Training/finetuning.csv.
-
-## Configuration
-Model: gpt3.5
-
-## Requirement
-* [OpenAI API KEY](https://platform.openai.com/account/api-keys)
-
-* Install all required python dependencies:
-
-python>=3.7
-
-numpy>=1.23.2
-
-openai>=0.23.0
-
-transformers>=4.21.1
-
+- **Testing Set:** 
+    - **Location:** `Testing/dataset/testing.json`
+    - **Highlight:** This set is thoroughly annotated and serves as the primary benchmark for assessing the medical coaching performance of LLMs. It is crucial for final model evaluations, reflecting how well a model can perform in real-world medical coaching scenarios.
 
 
 
