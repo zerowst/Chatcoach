@@ -28,7 +28,7 @@ def get_disease(text):
 ### head prompt + doctor + medical + Output: Your response (Generated response in Chinese)
 def replace_prompt(prompt, text):
     start = text.find("""Provided medical context:""") + len("""Provided medical context:""")
-    end = text.find('<dialogue history>:')
+    end = text.find('<dialogue_gen history>:')
     start_ = text.find("""<Doctor's statement>:""")
     end_ = text.find("""Your response (Generated response in Chinese):""")
 

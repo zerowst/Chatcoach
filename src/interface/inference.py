@@ -11,7 +11,7 @@ import interface.Embedding.dialogue_embed as embed
 #
 # 2. Human doctor: Input string capture
 #
-# 3. Coach AI: prompt -> Coach sentences storing not interfering patient-doctor dialogue
+# 3. Coach AI: prompt -> Coach sentences storing not interfering patient-doctor dialogue_gen
 #
 # 4. Patient AI: Prompt -> Completing conversation
 #
@@ -21,7 +21,7 @@ import interface.Embedding.dialogue_embed as embed
 # 163 con_agent
 
 
-coach_head_prompt = """Your role is to act as a linguistic coach for a doctor, ensuring their medical advice aligns with the provided context. If discrepancies are identified in the doctor's dialogue compared to the provided medical context, guide them towards making more accurate statements.
+coach_head_prompt = """Your role is to act as a linguistic coach for a doctor, ensuring their medical advice aligns with the provided context. If discrepancies are identified in the doctor's dialogue_gen compared to the provided medical context, guide them towards making more accurate statements.
 You need to perform the following actions with the specific order:
 1.You need detect the <medical words> in the <doctor's statement>. 
 2.Then you need to make comparison between <medical words> with <medical context>.
@@ -35,7 +35,7 @@ If sentence contains multiple errors, you need to point all of them out based on
 
 Please remember that '<incorrect symptom words>' and '<incorrect words>' refer to the misused words you detected. '<current disease>' and '<correct symptoms>' are derived from the medical context provided. 
 Please replace these placeholders with correct medical terms from <medical context> based on above instruction.
-Your response also need to based on <dialogue history> to make your response more suitable in dialogue, but only perform above actions on <doctor's statement>
+Your response also need to based on <dialogue_gen history> to make your response more suitable in dialogue_gen, but only perform above actions on <doctor's statement>
 Please show me Chinese response directly.
 
 Provided medical context: 
@@ -46,7 +46,7 @@ Provided medical context:
 
 
 
-patient_head_prompt = """Based on the <patient profile> and <dialogue history> provided below, predict the next sentence the patient would likely say in a patient-doctor conversation. Provide the response in the format: 病人：[Your Response Here].
+patient_head_prompt = """Based on the <patient profile> and <dialogue_gen history> provided below, predict the next sentence the patient would likely say in a patient-doctor conversation. Provide the response in the format: 病人：[Your Response Here].
 
 <patient profile>: \n"""
 
@@ -131,14 +131,14 @@ class Agent:
         # profile = '\n'.join(profile)
 
         prompt = patient_head_prompt + profile + \
-            """\n<dialogue history>:\n""" + history
+            """\n<dialogue_gen history>:\n""" + history
         return prompt
 
     def patient(self, profile, history):
         # profile = '\n'.join(profile)
 
         prompt = patient_head_prompt + profile + \
-            """\n<dialogue history>:\n""" + history
+            """\n<dialogue_gen history>:\n""" + history
 
 
 
@@ -147,7 +147,7 @@ class Agent:
 
     def coach_prompt(self, medical_knowledge, doctor_sen, history):
         prompt = coach_head_prompt + medical_knowledge + \
-                 """\n<dialogue history>:""" + history + \
+                 """\n<dialogue_gen history>:""" + history + \
                  """\n<Doctor's statement>:""" + doctor_sen + \
                  """\nYour response (Generated response in Chinese):"""
 
@@ -160,7 +160,7 @@ class Agent:
 ### Note that put extra info and context at the last of prompt.
 ### Position of same content in prompt does affect the response
         prompt = coach_head_prompt + medical_knowledge + \
-                """\n<dialogue history>:""" + history + \
+                """\n<dialogue_gen history>:""" + history + \
                 """\n<Doctor's statement>:""" + doctor_sen + \
                 """\nYour response (Generated response in Chinese):"""
 

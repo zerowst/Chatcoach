@@ -30,7 +30,7 @@ with open('../../../Embedding/disease_name', 'rb') as f:
 disease_name = disease_name.reshape(-1, 1)
 
 # Con_agent = Agent(3)
-### Extracting patient and doctor and dialogue history
+### Extracting patient and doctor and dialogue_gen history
 
 with open('../../../parsed_2020t', 'rb') as f:
     dic = pickle.load(f)

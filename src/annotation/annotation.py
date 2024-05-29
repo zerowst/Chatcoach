@@ -20,7 +20,7 @@ with open('Embedding/disease_name', 'rb') as f:
 disease_name = disease_name.reshape(-1, 1)
 
 Con_agent = Agent(3)
-### Extracting patient and doctor and dialogue history
+### Extracting patient and doctor and dialogue_gen history
 
 
 mediacl_label = ['医疗知识：']

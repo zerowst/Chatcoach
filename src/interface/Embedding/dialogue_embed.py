@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
     label = ['医生：', '病人：']
 
-    ### Keys with dialogue and 'Diagnosis and suggestions'
+    ### Keys with dialogue_gen and 'Diagnosis and suggestions'
     dic_both = []
     for key in dic.keys():
         if 'Dialogue' in dic[key].keys() and 'Diagnosis and suggestions' in dic[key].keys():
