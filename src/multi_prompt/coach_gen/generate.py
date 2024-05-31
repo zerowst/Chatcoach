@@ -121,7 +121,6 @@ def generate_coach(input_dict, saving_path, name):
 
 if __name__ == '__main__':
 
-
     FILENAME = 'cot2'
     SAVE_PATH = '../generated_coach/' + FILENAME + '_generated.npy'
     INPUT_FILE = '../coach_data/' + FILENAME + '_coach.csv'
