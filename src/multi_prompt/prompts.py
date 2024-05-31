@@ -47,40 +47,8 @@ zeroshot_prompt = """As a linguistic coach for a physician, evaluate the doctor'
 If there are discrepancies, guide the doctor. If not, provide positive feedback. Please answer in Chinese and think step by step.
 """
 
-### COT
-cot_prompt = """Act as a linguistic coach for a physician. Assess the doctor's statement: {a doctor’s statement sample}\
-  against a provided medical context: {medical context sample}  and guide the physician if discrepancies arise. 
 
-You thought: the medical words in the statement are: xxxx.  By comparing xxx with the medical context, \
-I find that xxx is not align with the medical context. Since this is related to symptoms, it should be treated as incorrect symptoms,\
- then I should check the corresponding accurate symptoms is ***. 
-So, you final response:  Doctor, 'xxx' isn't aligned with '<correct disease>'. Consider '<correct symptoms>
-
-Now assess the doctor's statement: {doctor’s statement}  against a provided medical context: {medical context} and guide the physician if discrepancies arise. 
-
-"""
-
-### GCOT
-gcot_prompt = """"Act as a linguistic coach for a physician. Assess the doctor's statement against a provided medical \
-context and guide the physician if discrepancies arise. Your steps are:
-
-1. Identify <medical words> in: {doctor's statement}.
-2. If no <medical words> are detected, encourage the doctor.
-3. Compare the <medical words> with the {medical context}.
-4. If they align, provide positive feedback and provide further medical advice or knowledge.
-5. If not, pinpoint inaccuracies like <incorrect symptoms>, <incorrect disease>, or <incorrect medications>. From the medical context, determine <correct symptoms>, <correct disease>, and <correct medication>.
-6. Respond accordingly:
-For symptoms: "Doctor, '<incorrect symptoms>' isn't aligned with '<correct disease>'. Consider '<correct symptoms>'."
-For diagnosis: "Doctor, your diagnosis of <incorrect disease> is off. Given the symptoms, perhaps it's <correct disease>."
-For medications: "Doctor, '<incorrect medication>' isn't suitable for <correct disease>. '<correct medication>' might be more apt."
-
-Note:
-Address all discrepancies in a single response.
-After steps 1 and 5, ensure placeholders (‘<>’) are replaced.
-Provide responses in Chinese."
-"""
-
-### vannila COT  hybrid.json
+### generalized cot
 vcot_prompt = """Act as a linguistic coach for a physician. Assess the doctor's statement: {doctor’s statement}  against a provided medical context: {medical context}  and guide the physician if discrepancies arise. 
 Your thought: the medical words in the statement are: xxxx.  By comparing xxx with the medical context,  if I find that xxx is not align with the {medical context}, since this is related to symptoms and it should be treated as incorrect symptoms, then I should check the corresponding accurate symptoms is ***. If I find that xxx is align with the {medical context}, then I should encourage the doctor and provide medical advice about xxx inside of the {doctor's statement}.
 So, your final response:  
@@ -123,7 +91,7 @@ Now assess the doctor's statement: {doctor’s statement}  against a provided me
 
 
 
-### chain of thought with four examples containing thinking steps
+### vanilla chain of thought with four examples containing thinking steps
 file = 'cot2'
 prompt = """Act as a linguistic coach for a physician. Assess the doctor's statement: {doctor’s statement}  against a provided\
  medical context: {medical context}. You should provide your response based on the following examples of input, \
