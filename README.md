@@ -68,28 +68,28 @@ The ChatCoach dataset encompasses 3,500 dialogues derived from real-world medica
 ### Usage
 * **Interface:** 
 
-    * We developed a simple interface of ChatCoach system based on GPT. You can add your own OPENAI KEY in `interface/run.py` at first.
+  We developed a simple interface of ChatCoach system based on GPT. You can add your own OPENAI KEY in `interface/run.py` at first.
 
-    * To test the interface, run: 
-        ```bash
-        python interface/run.py
+  To test the interface, run: 
+  ```bash
+  python interface/run.py
 
 - **Generation:**
 
-    * The prompts of different methods have been stored in ```multi_prompt/prompts.py```.
+  The prompts of different methods have been stored in ```multi_prompt/prompts.py```.
         
-    * To generate coach sentences from different prompting method, run:
-        ```bash
-        python multi_prompt/pipeline/run
+  To generate coach sentences from different prompting method, run:
+  ```bash
+  python multi_prompt/pipeline/run
 
 - **Evaluating:**
     
-    * We have stored some processed lingual coach results of different methods including our method GCoT, gpt3.5,
+  We have stored some processed lingual coach results of different methods including our method GCoT, gpt3.5,
     Vanilla CoT, etc.
     
-    * To evaluate the existing methods, run:
-      ```bash
-      python multi_prompt/pipeline/lingual/evaluating.py
+  To evaluate the existing methods, run:
+  ```bash
+  python multi_prompt/pipeline/lingual/evaluating.py
   
 * **Note:** 
     
