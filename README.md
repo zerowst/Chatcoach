@@ -66,50 +66,36 @@ The ChatCoach dataset encompasses 3,500 dialogues derived from real-world medica
 
 
 ### Usage
-Our code for interface, generation, evaluation has been released in ```\src```. To use the code, please run ```cd src```.
-    
 * **Interface:** 
 
-    * We developed a simple interface of ChatCoach system based on GPT. You can add your own OPENAI KEY in `interface/run.py` at first.
+  We developed a simple interface of ChatCoach system based on GPT. You can add your own OPENAI KEY in `interface/run.py` at first.
 
-    * To test the interface, run: 
-        ```bash
-        python interface/run.py
+  To test the interface, run: 
+  ```bash
+  python interface/run.py
 
 - **Generation:**
 
-    * The prompts of different methods have been stored in ```multi_prompt/prompts.py```.
+  The prompts of different methods have been stored in ```multi_prompt/prompts.py```.
         
-    * To generate coach sentences from different prompting methods, run:
-        ```bash
-        python multi_prompt/pipeline/run.py
+  To generate coach sentences from different prompting method, run:
+  ```bash
+  python multi_prompt/pipeline/run
 
-- **Evaluation:**
+- **Evaluating:**
     
-    * We have stored some processed lingual coach results from different methods including our method GCoT, gpt3.5,
+  We have stored some processed lingual coach results of different methods including our method GCoT, gpt3.5,
     Vanilla CoT, etc.
     
-    * To evaluate the existing methods, run:
-      ```bash
-      python multi_prompt/pipeline/lingual/evaluating.py
+  To evaluate the existing methods, run:
+  ```bash
+  python multi_prompt/pipeline/lingual/evaluating.py
   
 * **Note:** 
     
-    Before run any of scripts, please add your OPENAI KEY first. 
-    We used the gpt-3.5-turbo-1106 model for both generating and evaluating our results. 
-    Since different versions of the GPT model may yield varying outcomes, 
-    this could lead to deviations in the evaluation results.
+    Before run any of scripts, please add your OPENAI KEY at the beginning.The model we adopted for generating and evaluating is GPT3.5-turbo-1106. The version of gpt could affect the results, 
+    therefore, there could be a deviation on evaluating results.
 
-### Citation
-If you find the resource useful, please use the below BibTeX entry to cite the paper:
-```
-@article{huang2024benchmarking,
-  title={Benchmarking Large Language Models on Communicative Medical Coaching: a Novel System and Dataset},
-  author={Hengguan Huang, Songtao Wang, Hongfu Liu, Hao Wang, Ye Wang},
-  journal={arXiv preprint arXiv:2402.05547},
-  year={2024}
-}
-```
 
 
 
