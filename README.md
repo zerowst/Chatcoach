@@ -37,7 +37,7 @@ Our code for interface, generation, evaluation has been released in ```\src```. 
     
   We used different prompts for generation and evaluation including our method GCoT, vanilla instruction, 
   vanilla CoT, zero-shot CoT. 
-  You may check those prompts in ```multi_prompt/prompts.py```.
+  [The prompts are available here](https://github.com/zerowst/Chatcoach/blob/main/src/multi_prompt/prompts.py)
         
   To generate coach sentences from different prompting methods, run:
   ```bash
