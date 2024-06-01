@@ -101,7 +101,7 @@ Our code for interface, generation, evaluation has been released in ```\src```. 
     this could lead to deviations in the evaluation results.
 
 ### Citation
-If you find the resource useful, please use the below BibTeX entry to cite the paper:
+If you find the resource useful, please use the below BibTeX entry to cite the paper(ACL Findings 2024):
 ```
 @article{huang2024benchmarking,
   title={Benchmarking Large Language Models on Communicative Medical Coaching: a Novel System and Dataset},
