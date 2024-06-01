@@ -12,12 +12,12 @@ The ChatCoach dataset encompasses 3,500 dialogues derived from real-world medica
     - **Location:** `Training/coach_train.csv`
     - **Description:** Contains the main body of conversations intended for fine-tuning LLMs.
     - **Additional Resource:** `Training/finetuning.csv` for post-processed instruction-tuning data specifically tailored for Llama2.
-    - **Composition:** Each of samples contain input and target.
+    - **Composition:** Each of the samples contains input and target.
     
-        **Input:** The input prompt contains prior prompt, medical context, dialogue history and doctor's statement. For example,
+        **Input:** The input prompt contains the prior prompt, medical context, dialogue history and doctor's statement. For example,
     
         **prior prompt**: 
-        ```Your role is to act as a linguistic coach for a doctor, ensuring their medical advice aligns with the provided context. If discrepancies are identified in the doctor's dialogue compared to the provided medical context, guide them towards making more accurate statements.
+        ```Your role is to act as a linguistic coach for a doctor, ensuring their medical advice aligns with the provided context. If discrepancies are identified in the doctor's dialogue compared to the provided medical context, guide them toward making more accurate statements.
         You need to perform the following actions with the specific order:
         1.You need detect the <medical words> in the <doctor's statement>. 
         2.Then you need to make comparison between <medical words> with <medical context>.
@@ -29,9 +29,9 @@ The ChatCoach dataset encompasses 3,500 dialogues derived from real-world medica
         
         If sentence contains multiple errors, you need to point all of them out based on above patterns.
         
-        Please remember that '<incorrect symptom words>' and '<incorrect words>' refer to the misused words you detected. '<current disease>' and '<correct symptoms>' are derived from the medical context provided. 
-        Please replace these placeholders with correct medical terms from <medical context> based on above instruction.
-        Your response also need to based on <dialogue history> to make your response more suitable in dialogue, but only perform above actions on <doctor's statement>
+        Please remember that '<incorrect symptom words>' and '<incorrect words>' refer to your detected misused words. '<current disease>' and '<correct symptoms>' are derived from the medical context provided. 
+        Please replace these placeholders with correct medical terms from <medical context> based on the above instruction.
+        Your response also need to based on <dialogue history> to make your response more suitable in dialogue, but only perform the above actions on <doctor's statement>
         Please show me Chinese response directly.
         
         Provided medical context: 
@@ -84,7 +84,7 @@ Our code for interface, generation, evaluation has been released in ```\src```. 
   ```bash
   python multi_prompt/pipeline/run.py
 
-- **Evaluating:**
+- **Evaluation:**
     
   We have stored some processed lingual coach results of different methods including our method GCoT, gpt3.5,
     Vanilla CoT, etc.
@@ -103,12 +103,13 @@ Our code for interface, generation, evaluation has been released in ```\src```. 
 ### Citation
 If you find the resource useful, please use the below BibTeX entry to cite the paper(ACL Findings 2024):
 ```
-@article{huang2024benchmarking,
-  title={Benchmarking Large Language Models on Communicative Medical Coaching: a Novel System and Dataset},
+@inproceedings{huang2024acl,
+  title={Benchmarking Large Language Models on Communicative Medical Coaching: A Dataset and a Novel System},
   author={Hengguan Huang, Songtao Wang, Hongfu Liu, Hao Wang, Ye Wang},
-  journal={arXiv preprint arXiv:2402.05547},
-  year={2024}
+  year={Findings of the Association for Computational Linguistics: ACL 2024}
 }
+
+
 ```
 
 
