@@ -5,37 +5,6 @@ import numpy as np
 
 
 
-
-with open('../annotation/human_detection_all', 'rb') as f:
-    human_detection = pickle.load(f)
-
-
-def saving_file(input_, filename):
-    with open('coach_data/' + str(filename) + '_coach' + '.csv', 'w', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        writer.writerow(['input'])
-        for c in input_:
-            writer.writerow([c])
-
-
-def get_disease(text):
-    pattern = r"<medical context>:\s*(\S+)"
-
-    match = re.search(pattern, text)
-    disease = match.group(1)
-    return disease
-
-### head prompt + doctor + medical + Output: Your response (Generated response in Chinese)
-def replace_prompt(prompt, text):
-    start = text.find("""Provided medical context:""") + len("""Provided medical context:""")
-    end = text.find('<dialogue_gen history>:')
-    start_ = text.find("""<Doctor's statement>:""")
-    end_ = text.find("""Your response (Generated response in Chinese):""")
-
-    new_text = prompt + text[start_: end_] + text[start:end] + """\nOutput: Your response (Generated response in Chinese):"""
-    return new_text
-
-
 ### vannila prompt
 
 vannila_prompt = """As a linguistic coach for a physician, evaluate the doctor's statement against the given medical context. \
@@ -80,14 +49,6 @@ Output:医生，您对于麦粒肿患者使用左氧氟沙星眼水一天六次�
 
 Now assess the doctor's statement: {doctor’s statement}  against a provided medical context: {medical context}  and guide the physician if discrepancies arise. 
 """
-# vcot_coach_input = [replace_prompt(vcot_prompt, t) for t in coach_input]
-#
-#
-# with open('coach_data/hybrid_coach.csv', 'w', encoding='utf-8') as f:
-#     writer = csv.writer(f)
-#     writer.writerow(['input'])
-#     for c in vcot_coach_input:
-#         writer.writerow([c])
 
 
 
