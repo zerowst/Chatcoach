@@ -1,6 +1,6 @@
 # ChatCoach Project
 
-## Implementation for "Benchmarking Large Language Models on Communicative Medical Coaching: A Dataset and a Novel System" [Paper:](https://arxiv.org/pdf/2402.05547)
+## Implementation for "Benchmarking Large Language Models on Communicative Medical Coaching: A Dataset and a Novel System" [Paper is available here.](https://arxiv.org/pdf/2402.05547)
 
 ### Introduction
 
