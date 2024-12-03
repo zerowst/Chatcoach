@@ -1,6 +1,6 @@
 # ChatCoach Project
 
-## Implementation for "Benchmarking Large Language Models on Communicative Medical Coaching: A Dataset and a Novel System" [Paper is available here.](https://arxiv.org/pdf/2402.05547)
+## Implementation for "Benchmarking Large Language Models on Communicative Medical Coaching: A Dataset and a Novel System", ACL 2024 Findings, [Paper is available here.](https://arxiv.org/pdf/2402.05547)
 
 ### Introduction
 
@@ -45,7 +45,7 @@ Our code for interface, generation, evaluation has been released in ```\src```. 
 
 - **Evaluation:**
     
-  We have stored some processed lingual coach results of different methods including our method GCoT, gpt3.5,
+  We have stored some processed lingual coach results of different methods including our method GCoT, Zero-shot CoT,
     Vanilla CoT, etc. You may load those files in ```multi_prompt/pipeline/lingual/data```
     
   To evaluate the existing methods, run:
