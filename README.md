@@ -1,6 +1,6 @@
-# ChatCoach Dataset
+# ChatCoach Project
 
-## Dataset for "Benchmarking Large Language Models on Communicative Medical Coaching: A Dataset and a Novel System"
+## Implementation for "Benchmarking Large Language Models on Communicative Medical Coaching: A Dataset and a Novel System" [Paper:](https://arxiv.org/pdf/2402.05547)
 
 ### Introduction
 
